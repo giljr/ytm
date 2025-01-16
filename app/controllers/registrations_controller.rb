@@ -7,9 +7,9 @@ class RegistrationsController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Registration successful. Please log in."
+      redirect_to sign_in_path, notice: "Registration successful. Please log in."
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
