@@ -1,6 +1,6 @@
 <h1>Sign Up</h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
+<%= form_with model: @user, url: sign_up_path, method: "post", data: { turbo: false }  do |form| %>
   <%= render "shared/form_errors", form: form %>
 
   <div class="form-group">
